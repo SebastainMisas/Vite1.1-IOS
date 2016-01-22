@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="GDx-Tz-Oqb">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
+    </dependencies>
+    <scenes>
+        <!--Login Controller-->
+        <scene sceneID="VXe-gV-El5">
+            <objects>
+                <viewController modalTransitionStyle="flipHorizontal" id="GDx-Tz-Oqb" customClass="LoginController" customModule="vite1_1" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jC2-uq-sDT"/>
+                        <viewControllerLayoutGuide type="bottom" id="fo5-Op-azx"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Nb5-3h-AvD">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView userInteractionEnabled="NO" alpha="0.69999999999999996" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Sxg-qc-uur" customClass="webViewBG">
+                                <rect key="frame" x="0.0" y="59" width="414" height="677"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </webView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Vite" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ni4-tR-deJ">
+                                <rect key="frame" x="129" y="110" width="157" height="61"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="55"/>
+                                <color key="textColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="Get invited to exclusive events around you! 24 hour limit!" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E7F-ag-Hgy">
+                                <rect key="frame" x="94" y="167" width="240" height="128"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="textColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                    <connections>
+                        <outlet property="webViewBG" destination="Sxg-qc-uur" id="hZj-qP-mnH"/>
+                        <segue destination="hPI-fL-jJf" kind="show" identifier="ShowMainController" id="5Dr-we-4pX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4cE-ud-4Be" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="954" y="690"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="wUh-ZU-vH4">
+            <objects>
+                <viewController id="hPI-fL-jJf" customClass="ViewController" customModule="vite1_1" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="WzQ-N5-kGX"/>
+                        <viewControllerLayoutGuide type="bottom" id="JYt-mK-Ett"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="uAj-Px-MHM">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" barStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="PEv-4h-SM9">
+                                <rect key="frame" x="0.0" y="20" width="414" height="44"/>
+                                <items>
+                                    <navigationItem id="Mbp-pS-9GY">
+                                        <barButtonItem key="leftBarButtonItem" image="Gender Neutral User Filled-50" id="QWe-W1-pRk">
+                                            <inset key="imageInsets" minX="0.0" minY="5" maxX="9" maxY="5"/>
+                                            <color key="tintColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                                        </barButtonItem>
+                                        <rightBarButtonItems>
+                                            <barButtonItem image="Red Carpet Filled-50" id="i5W-xB-AdY">
+                                                <inset key="imageInsets" minX="6" minY="4" maxX="0.0" maxY="0.0"/>
+                                                <color key="tintColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                                            </barButtonItem>
+                                            <barButtonItem image="Read Message Filled-50" id="Ubm-2p-PPK">
+                                                <inset key="imageInsets" minX="15" minY="9" maxX="0.0" maxY="7"/>
+                                                <color key="tintColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                                            </barButtonItem>
+                                        </rightBarButtonItems>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Vite" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uPp-NP-lFJ">
+                                <rect key="frame" x="89" y="28" width="84" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="34"/>
+                                <color key="textColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E1h-LY-Qj6" userLabel="addEventButton">
+                                <rect key="frame" x="0.0" y="668" width="104" height="48"/>
+                                <state key="normal" image="button_plus_blue"/>
+                                <connections>
+                                    <segue destination="fsj-MY-QzA" kind="show" id="FMy-YG-Rcd"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2vD-hK-cus" userLabel="nextButton">
+                                <rect key="frame" x="126" y="656" width="64" height="64"/>
+                                <state key="normal" image="gnome_process_stop"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hrp-u7-LCf" userLabel="requestButton">
+                                <rect key="frame" x="224" y="656" width="63" height="64"/>
+                                <state key="normal" title="Button" image="tick"/>
+                            </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tvA-fu-hDP" userLabel="event">
+                                <rect key="frame" x="20" y="82" width="374" height="550"/>
+                                <subviews>
+                                    <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ggp-GB-eRM" userLabel="eventContainer">
+                                        <rect key="frame" x="-7" y="-8" width="390" height="558"/>
+                                    </containerView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="sparkled-mci-party-bus-interior-limo-bus-dfw" translatesAutoresizingMaskIntoConstraints="NO" id="TT4-vM-cW3" userLabel="eventPicture">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="550"/>
+                                    </imageView>
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KSN-36-nFq" userLabel="eventInfoContainer">
+                                        <rect key="frame" x="8" y="383" width="358" height="159"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sebastian" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3yu-AG-ZK3" userLabel="userName">
+                                                <rect key="frame" x="64" y="8" width="206" height="43"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="8:00PM" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EB4-Ka-LM0" userLabel="time">
+                                                <rect key="frame" x="267" y="0.0" width="99" height="51"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xci-su-dAz">
+                                                <rect key="frame" x="0.0" y="53" width="358" height="27"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HFV-P9-HR0" userLabel="eventDescription">
+                                                <rect key="frame" x="0.0" y="73" width="358" height="86"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="12294663_10203804687677120_2383926010236257492_n" translatesAutoresizingMaskIntoConstraints="NO" id="gBd-1K-a5S" userLabel="userProfilePic">
+                                                <rect key="frame" x="8" y="8" width="56" height="43"/>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="0.75156250000000002" colorSpace="calibratedWhite"/>
+                                    </scrollView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                    <connections>
+                        <outlet property="event" destination="tvA-fu-hDP" id="w2i-mj-dp7"/>
+                        <outlet property="eventInfoContainer" destination="KSN-36-nFq" id="Iwb-09-yZD"/>
+                        <outlet property="eventPicture" destination="gBd-1K-a5S" id="Vd8-Vf-ADB"/>
+                        <outlet property="userProfilePic" destination="gBd-1K-a5S" id="HL3-iZ-uh4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CHP-o9-rYg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="954" y="1517"/>
+        </scene>
+        <!--Create Event Controller-->
+        <scene sceneID="w5E-oi-QoW">
+            <objects>
+                <viewController id="fsj-MY-QzA" customClass="CreateEventController" customModule="vite1_1" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="zij-vN-xuh"/>
+                        <viewControllerLayoutGuide type="bottom" id="Jl4-Be-vPH"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="n2u-KP-NF4">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" barStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="5nw-fl-2Wf">
+                                <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                <items>
+                                    <navigationItem title="Create Vite" id="qHF-Ma-fx6">
+                                        <barButtonItem key="leftBarButtonItem" image="Back-50" id="MeN-5u-JVQ">
+                                            <inset key="imageInsets" minX="0.0" minY="9" maxX="8" maxY="5"/>
+                                            <color key="tintColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                                            <connections>
+                                                <segue destination="hPI-fL-jJf" kind="show" id="gVc-gT-bZj"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" image="Checkmark Filled-50 (1)" id="nc0-yl-N3k">
+                                            <inset key="imageInsets" minX="0.0" minY="6" maxX="8" maxY="6"/>
+                                            <color key="tintColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Screen Shot 2016-01-11 at 3.24.20 PM" translatesAutoresizingMaskIntoConstraints="NO" id="Pxo-4M-00R">
+                                <rect key="frame" x="0.0" y="72" width="414" height="299"/>
+                            </imageView>
+                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="15" translatesAutoresizingMaskIntoConstraints="NO" id="rsS-Hn-gL4" userLabel="eventTime">
+                                <rect key="frame" x="91" y="379" width="276" height="83"/>
+                                <date key="date" timeIntervalSinceReferenceDate="475152265.64504999">
+                                    <!--2016-01-22 10:44:25 +0000-->
+                                </date>
+                            </datePicker>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hQG-Xe-VgT">
+                                <rect key="frame" x="40" y="488" width="327" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Description" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VQH-3Q-Ewo" userLabel="eventDescription">
+                                <rect key="frame" x="40" y="547" width="327" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Share" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BQD-Oe-0J8">
+                                <rect key="frame" x="40" y="623" width="73" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="When:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zl0-X0-XD9">
+                                <rect key="frame" x="40" y="410" width="52" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YTE-jp-QFg" userLabel="shareFacebook">
+                                <rect key="frame" x="14" y="658" width="104" height="50"/>
+                                <state key="normal" image="Facebook Filled-50"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nc2-Fd-52t" userLabel="shareInstagram">
+                                <rect key="frame" x="126" y="658" width="104" height="50"/>
+                                <state key="normal" image="Instagram Filled-50"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MeL-0X-G7X" userLabel="shareTwitter">
+                                <rect key="frame" x="267" y="658" width="50" height="50"/>
+                                <state key="normal" image="Twitter Filled-50"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rod-bN-UgK" userLabel="uploadEventPic">
+                                <rect key="frame" x="0.0" y="72" width="408" height="299"/>
+                                <connections>
+                                    <action selector="uploadEventPic:" destination="fsj-MY-QzA" eventType="touchUpInside" id="SOT-Nv-9rU"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                    <connections>
+                        <outlet property="eventImageShow" destination="Pxo-4M-00R" id="zhy-Wx-v9e"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nO9-4g-so0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="954" y="2320"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="12294663_10203804687677120_2383926010236257492_n" width="960" height="960"/>
+        <image name="Back-50" width="50" height="50"/>
+        <image name="Checkmark Filled-50 (1)" width="50" height="50"/>
+        <image name="Facebook Filled-50" width="50" height="50"/>
+        <image name="Gender Neutral User Filled-50" width="50" height="50"/>
+        <image name="Instagram Filled-50" width="50" height="50"/>
+        <image name="Read Message Filled-50" width="50" height="50"/>
+        <image name="Red Carpet Filled-50" width="50" height="50"/>
+        <image name="Screen Shot 2016-01-11 at 3.24.20 PM" width="505" height="505"/>
+        <image name="Twitter Filled-50" width="50" height="50"/>
+        <image name="button_plus_blue" width="48" height="48"/>
+        <image name="gnome_process_stop" width="64" height="64"/>
+        <image name="sparkled-mci-party-bus-interior-limo-bus-dfw" width="1024" height="680"/>
+        <image name="tick" width="128" height="128"/>
+    </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="gVc-gT-bZj"/>
+    </inferredMetricsTieBreakers>
+</document>
