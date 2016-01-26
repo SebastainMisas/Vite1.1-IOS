@@ -11,78 +11,69 @@ import FBSDKCoreKit
 import FBSDKLoginKit
 import ParseFacebookUtilsV4
 
-class LoginController: UIViewController, FBSDKLoginButtonDelegate {
-    func loginButton(loginButton: FBSDKLoginButton!, didCompleteWithResult result: FBSDKLoginManagerLoginResult!, error: NSError!) {
-        
-        
-        if ((error) != nil)
-        {
-            // Process error
+class LoginController: UIViewController {
+    
+    func grabUserData() {
+        FBSDKGraphRequest.init(graphPath: "me", parameters: ["fields":"first_name, last_name, picture.type(large)"]).startWithCompletionHandler { (connection, result, error) -> Void in
+            let userFirstName: String = (result.objectForKey("first_name") as? String)!
+            let userLastName: String = (result.objectForKey("last_name") as? String)!
+            let userPictureURL: String = (result.objectForKey("picture")?.objectForKey("data")?.objectForKey("url") as? String)!
+            print("User: " + userFirstName + "" + userLastName)
         }
-        else if result.isCancelled {
-            // Handle cancellations
-        }
-        else {
-            // If you ask for multiple permissions at once, you
-            // should check if specific permissions missing
-            if result.grantedPermissions.contains("email")
-            {
-                self.performSegueWithIdentifier("ShowMainController", sender: self)
-                print("User Logged In")
+    }
+    
+    
+
+    @IBAction func LoginButton(sender: AnyObject) {
+        // saving the user to Parse when he logs in faceboook with access to his public info.
+        let permissions = [ "public_profile", "email", "user_friends" ]
+        PFFacebookUtils.logInInBackgroundWithReadPermissions(permissions,  block: {  (user: PFUser?, error: NSError?) -> Void in
+            if (error != nil) {
+                print("error")
             }
+            if let user = user {
+                if user.isNew {
+                    print("User signed up and logged in through Facebook!")
+                    self.grabUserData()
+                    self.performSegueWithIdentifier("ShowMainController", sender: self)
+                }
+                else {
+                    print("User logged in through Facebook!")
+                    self.performSegueWithIdentifier("ShowMainController", sender: self)
+                }
+            }
+            else {
+                print("Uh oh. The user cancelled the Facebook login.")
+            }
+        })
+
+    }
+    
+    
+    
+    override func viewDidAppear(animated: Bool) {
+        // if user is logged in already go to main page else show FB login button
+        if (FBSDKAccessToken.currentAccessToken() != nil)
+        {
+            print("User already logged in")
+            self.performSegueWithIdentifier("ShowMainController", sender: self)
         }
-    }
-    
-    func loginButtonDidLogOut(loginButton: FBSDKLoginButton!) {
-        print("User Logged Out")
-    }
-    
-    @IBOutlet weak var webViewBG: UIWebView!
-    
-    override func viewDidLoad() {
         
-    // The code below is to use the gif as a motion background for login page.
+
+    }
+
+    @IBOutlet weak var webViewBG: UIWebView!
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+    // The code below is to use the gif as a motion background.
         let filePath = NSBundle.mainBundle().pathForResource("giphy", ofType: "gif")
         let gif = NSData(contentsOfFile: filePath!)
         webViewBG.loadData(gif!, MIMEType: "image/gif", textEncodingName: String(), baseURL: NSURL())
         webViewBG.userInteractionEnabled = false;
+        //loginButton.delegate = self
 
-    // if user is logged in already go to main page else show FB login button
-        if (FBSDKAccessToken.currentAccessToken() != nil)
-        {
-            // User is already logged in, do work such as go to next view controller.
-            dispatch_async(dispatch_get_main_queue()){
-                self.performSegueWithIdentifier("ShowMainController", sender: self)
-            }
-            print("user logged in already")
-        }
-        else
-        {
-            let loginView : FBSDKLoginButton = FBSDKLoginButton()
-            self.view.addSubview(loginView)
-            loginView.center = self.view.center
-            loginView.readPermissions = ["public_profile", "email", "user_friends"]
-            loginView.delegate = self
-        }
     
-    // saving the user to Parse when he logs in faceboook with access to his public info.
-        let permissions = ["public_profile", "email"]
-        
-        PFFacebookUtils.logInInBackgroundWithReadPermissions(permissions) {
-            
-            (user: PFUser?, error: NSError?) -> Void in
-            
-            if let error = error {
-                print(error)
-            }
-            else {
-                if let user = user {
-                    self.performSegueWithIdentifier("ShowMainController", sender: self)
-                    print(user)
-                }
-            }
-            
-        }
     }
 
     

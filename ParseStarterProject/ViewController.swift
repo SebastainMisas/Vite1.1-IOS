@@ -11,7 +11,7 @@ import UIKit
 import FBSDKCoreKit
 import FBSDKLoginKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     
  
@@ -22,7 +22,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+    // making conatiners and images rounded
         userProfilePic.layer.cornerRadius = userProfilePic.frame.size.width/2
         userProfilePic.clipsToBounds = true
         eventInfoContainer.layer.cornerRadius = 15.0
@@ -30,14 +30,67 @@ class ViewController: UIViewController {
         event.layer.cornerRadius = 15.0
         event.clipsToBounds = true
 
-        
+    // code to drag the event
         let gesture = UIPanGestureRecognizer(target: self, action: Selector("wasDragged:"))
         event.addGestureRecognizer(gesture)
-        
         event.userInteractionEnabled = true
         
     }
+// Uploading images to create event code below
+// -------------------------------------------------------------------
+    @IBAction func uploadEventPic(sender: AnyObject) {
+        var Gallery = UIImagePickerController()
+        Gallery.delegate = self
+        Gallery.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
+        Gallery.allowsEditing = true
+// uncomment lines before deployment to use camera
+//        var Camera = UIImagePickerController()
+//        Camera.delegate = self
+//        Camera.sourceType = UIImagePickerControllerSourceType.Camera
+//        Camera.allowsEditing = true
+        
+        // prompting user to pick from camera or galery
+        let alert = UIAlertController(title: "Chose event picture", message: nil, preferredStyle: UIAlertControllerStyle.Alert)
+        alert.addAction(UIAlertAction(title: "Open gallery", style: UIAlertActionStyle.Default, handler: { (actionSheetController) -> Void in
+            self.presentViewController(Gallery, animated: true, completion: nil)
+        }))
+        alert.addAction(UIAlertAction(title: "Open camera", style: UIAlertActionStyle.Default, handler: { (actionSheetController) -> Void in
+//            self.presentViewController(Camera, animated: true, completion: nil)
+        }))
+        alert.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: { (actionSheetController) -> Void in
+            alert.dismissViewControllerAnimated(true, completion: nil)
+        }))
+        self.presentViewController(alert, animated: true, completion: nil)
+        
+
+    }
+    // Global class variable
+    var eventImage: UIImage?
+    // when image is picked set it equal to the gobal variable above
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage!, editingInfo: [NSObject : AnyObject]!) {
+        
+        self.eventImage = image
+
+        picker.dismissViewControllerAnimated(true, completion: { (finished) -> Void in
+            
+            self.performSegueWithIdentifier("createEventPage", sender: self)
+        })
+        
+    }
+    // If the segue is executed set the global variable "eventImage" to the next view controllers "recivedImage"
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        if segue.identifier == "createEventPage" {
+            let destinationViewController = segue.destinationViewController as! CreateEventController
+            destinationViewController.recivedImage = self.eventImage
+        }
+    }
+// ----------------------------------------------------------------------
+// end of image picking code
+
     
+// Animation for swiping left and right on event
+// ----------------------------------------------------------------------
     func wasDragged(gesture: UIPanGestureRecognizer) {
         
         let translation = gesture.translationInView(self.view)
@@ -75,13 +128,13 @@ class ViewController: UIViewController {
             
             event.transform = stretch
             
-            event.center = CGPoint(x: self.view.bounds.width / 2, y: self.view.bounds.height / 2)
+            event.center = CGPoint(x: self.view.bounds.width / 2, y: self.view.bounds.height / 1.8)
             
         }
         
-        
-        
     }
+// ----------------------------------------------------------------------
+// end of swiping annimation code 
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

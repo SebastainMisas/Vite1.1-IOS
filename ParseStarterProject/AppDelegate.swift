@@ -13,6 +13,7 @@ import Parse
 import ParseFacebookUtilsV4
 import FBSDKCoreKit
 
+
 // If you want to use any of the UI components, uncomment this line
 // import ParseUI
 
@@ -96,23 +97,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //            let types: UIRemoteNotificationType = [.Alert, .Badge, .Sound]
         //            application.registerForRemoteNotificationTypes(types)
         //        }
-        return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
         
+        return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
 
     }
     
-    func application(application: UIApplication,
-        openURL url: NSURL,
-        sourceApplication: String?,
-        annotation: AnyObject) -> Bool {
-            
-            return FBSDKApplicationDelegate.sharedInstance().application(
-                application,
-                openURL: url,
-                sourceApplication: sourceApplication,
-                annotation: annotation)
+//    func application(application: UIApplication,
+//        openURL url: NSURL,
+//        sourceApplication: String?,
+//        annotation: AnyObject) -> Bool {
+//            return FBSDKApplicationDelegate.sharedInstance().application(
+//                application,
+//                openURL: url,
+//                sourceApplication: sourceApplication,
+//                annotation: annotation)
+//    }
+    
+    func application(app: UIApplication, openURL url: NSURL, options: [String : AnyObject]) -> Bool
+    {
+        return FBSDKApplicationDelegate.sharedInstance().application(app, openURL: url, sourceApplication: options["UIApplicationOpenURLOptionsSourceApplicationKey"] as! String!, annotation: nil)
     }
-
+    
+//    func applicationDidBecomeActive(application: UIApplication) {
+//        FBSDKAppEvents.activateApp()
+//    }
     //--------------------------------------
     // MARK: Push Notifications
     //--------------------------------------
@@ -145,6 +153,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             PFAnalytics.trackAppOpenedWithRemoteNotificationPayload(userInfo)
         }
     }
+    
+    func applicationDidBecomeActive(application: UIApplication) {
+        FBSDKAppEvents.activateApp()
+    }
 
     ///////////////////////////////////////////////////////////
     // Uncomment this method if you want to use Push Notifications with Background App Refresh
@@ -163,7 +175,4 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // Uncomment this method if you are using Facebook
     ///////////////////////////////////////////////////////////
     
-    func applicationDidBecomeActive(application: UIApplication) {
-        FBSDKAppEvents.activateApp()
-    }
 }
