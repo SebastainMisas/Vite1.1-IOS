@@ -66,7 +66,8 @@ class LoginController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-    // The code below is to use the gif as a motion background.
+//     The code below is to use the gif as a motion background.
+
         let filePath = NSBundle.mainBundle().pathForResource("giphy", ofType: "gif")
         let gif = NSData(contentsOfFile: filePath!)
         webViewBG.loadData(gif!, MIMEType: "image/gif", textEncodingName: String(), baseURL: NSURL())
