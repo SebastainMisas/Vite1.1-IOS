@@ -27,6 +27,11 @@
 		9E87C1291C52069F00A7CF4F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E87C1281C52069F00A7CF4F /* Main.storyboard */; };
 		9E87C12D1C521E6500A7CF4F /* giphy.gif in Resources */ = {isa = PBXBuildFile; fileRef = 9E87C12C1C521E6500A7CF4F /* giphy.gif */; };
 		9E87C1331C56CA2E00A7CF4F /* settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E87C1321C56CA2E00A7CF4F /* settings.swift */; };
+		9E87C1351C57481E00A7CF4F /* TransitionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E87C1341C57481E00A7CF4F /* TransitionManager.swift */; };
+		9E87C1371C582B6F00A7CF4F /* choseEventPictureTransitionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E87C1361C582B6F00A7CF4F /* choseEventPictureTransitionViewController.swift */; };
+		9E87C13B1C58458100A7CF4F /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E87C1391C58458100A7CF4F /* Fabric.framework */; };
+		9E87C13C1C58458100A7CF4F /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E87C13A1C58458100A7CF4F /* Crashlytics.framework */; };
+		9E87C13E1C58503D00A7CF4F /* MenuTransitionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E87C13D1C58503D00A7CF4F /* MenuTransitionManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +59,11 @@
 		9E87C1281C52069F00A7CF4F /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		9E87C12C1C521E6500A7CF4F /* giphy.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = giphy.gif; path = ../../../../Documents/Pictures/giphy.gif; sourceTree = "<group>"; };
 		9E87C1321C56CA2E00A7CF4F /* settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = settings.swift; sourceTree = "<group>"; };
+		9E87C1341C57481E00A7CF4F /* TransitionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionManager.swift; sourceTree = "<group>"; };
+		9E87C1361C582B6F00A7CF4F /* choseEventPictureTransitionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = choseEventPictureTransitionViewController.swift; sourceTree = "<group>"; };
+		9E87C1391C58458100A7CF4F /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = SOURCE_ROOT; };
+		9E87C13A1C58458100A7CF4F /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = SOURCE_ROOT; };
+		9E87C13D1C58503D00A7CF4F /* MenuTransitionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuTransitionManager.swift; path = "../../../../Documents/Custom-Menu-Transition-Swift-Tutorial-54379bd45cb5660b8e7bea294aeef32b673c9976/Menu/MenuTransitionManager.swift"; sourceTree = "<group>"; };
 		A13ECDD4DB3AF027105B8476 /* Pods-vite1.1.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-vite1.1.debug.xcconfig"; path = "Pods/Target Support Files/Pods-vite1.1/Pods-vite1.1.debug.xcconfig"; sourceTree = "<group>"; };
 		D0979726921065C86ED1DA4F /* Pods_vite1_1.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_vite1_1.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -73,6 +83,8 @@
 				81BA81711A49DB6800E65899 /* Parse.framework in Frameworks */,
 				81BA81701A49DB6800E65899 /* Bolts.framework in Frameworks */,
 				1C6E8D90AA6EA7D14C4141AE /* Pods_vite1_1.framework in Frameworks */,
+				9E87C13C1C58458100A7CF4F /* Crashlytics.framework in Frameworks */,
+				9E87C13B1C58458100A7CF4F /* Fabric.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -115,11 +127,14 @@
 				9E87C1281C52069F00A7CF4F /* Main.storyboard */,
 				81BA814A1A49DA1800E65899 /* AppDelegate.swift */,
 				81BA814C1A49DA1800E65899 /* ViewController.swift */,
+				9E87C1361C582B6F00A7CF4F /* choseEventPictureTransitionViewController.swift */,
 				9E1A4BC31C51B7A6009B2D18 /* CreateEventController.swift */,
 				9E1A4BBB1C518F23009B2D18 /* LoginController.swift */,
 				9E87C1321C56CA2E00A7CF4F /* settings.swift */,
 				9E87C12C1C521E6500A7CF4F /* giphy.gif */,
 				9E1A4BCC1C51BB0F009B2D18 /* nav.jpeg */,
+				9E87C1341C57481E00A7CF4F /* TransitionManager.swift */,
+				9E87C13D1C58503D00A7CF4F /* MenuTransitionManager.swift */,
 			);
 			path = ParseStarterProject;
 			sourceTree = "<group>";
@@ -127,6 +142,8 @@
 		81BA816A1A49DB5600E65899 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9E87C13A1C58458100A7CF4F /* Crashlytics.framework */,
+				9E87C1391C58458100A7CF4F /* Fabric.framework */,
 				9E1A4BB61C518AF6009B2D18 /* FBSDKShareKit.framework */,
 				9E1A4BB41C518AF0009B2D18 /* FBSDKCoreKit.framework */,
 				9E1A4BB21C518AEC009B2D18 /* FBSDKLoginKit.framework */,
@@ -172,6 +189,7 @@
 				81BA81431A49DA1800E65899 /* Resources */,
 				DB20B6CE3E5C974D056CDBCC /* Embed Pods Frameworks */,
 				654204354BA6F169FE37F6BE /* Copy Pods Resources */,
+				9E87C1381C58453E00A7CF4F /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -246,6 +264,19 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-vite1.1/Pods-vite1.1-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		9E87C1381C58453E00A7CF4F /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Fabric.framework/run b9ffd8993ed1cc490e3913f57eae29f4a63c5a1a 250e51218cf17f31017e4e6b734134f7ef143cbb3fff711c146f9b88e2922571\n";
+		};
 		9F1F893FFB01591670D0CDF5 /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -283,11 +314,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9E87C1351C57481E00A7CF4F /* TransitionManager.swift in Sources */,
+				9E87C13E1C58503D00A7CF4F /* MenuTransitionManager.swift in Sources */,
 				9E1A4BC41C51B7A6009B2D18 /* CreateEventController.swift in Sources */,
 				81BA814D1A49DA1800E65899 /* ViewController.swift in Sources */,
 				9E1A4BBC1C518F23009B2D18 /* LoginController.swift in Sources */,
 				81BA814B1A49DA1800E65899 /* AppDelegate.swift in Sources */,
 				9E87C1331C56CA2E00A7CF4F /* settings.swift in Sources */,
+				9E87C1371C582B6F00A7CF4F /* choseEventPictureTransitionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

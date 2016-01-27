@@ -30,6 +30,20 @@
 	</array>
 	<key>CFBundleVersion</key>
 	<string>1.12.0</string>
+	<key>Fabric</key>
+	<dict>
+		<key>APIKey</key>
+		<string>b9ffd8993ed1cc490e3913f57eae29f4a63c5a1a</string>
+		<key>Kits</key>
+		<array>
+			<dict>
+				<key>KitInfo</key>
+				<dict/>
+				<key>KitName</key>
+				<string>Crashlytics</string>
+			</dict>
+		</array>
+	</dict>
 	<key>FacebookAppID</key>
 	<string>1734264636805223</string>
 	<key>FacebookDisplayName</key>
@@ -43,37 +57,11 @@
 	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
-<!--	<key>NSAppTransportSecurity</key>-->
-<!--	<dict>-->
-<!--		<key>NSExceptionDomains</key>-->
-<!--		<dict>-->
-<!--			<key>akamaihd.net</key>-->
-<!--			<dict>-->
-<!--				<key>NSIncludesSubdomains</key>-->
-<!--				<true/>-->
-<!--				<key>NSThirdPartyExceptionRequiresForwardSecrecy</key>-->
-<!--				<false/>-->
-<!--			</dict>-->
-<!--			<key>facebook.com</key>-->
-<!--			<dict>-->
-<!--				<key>NSIncludesSubdomains</key>-->
-<!--				<true/>-->
-<!--				<key>NSThirdPartyExceptionRequiresForwardSecrecy</key>-->
-<!--				<false/>-->
-<!--			</dict>-->
-<!--			<key>fbcdn.net</key>-->
-<!--			<dict>-->
-<!--				<key>NSIncludesSubdomains</key>-->
-<!--				<true/>-->
-<!--				<key>NSThirdPartyExceptionRequiresForwardSecrecy</key>-->
-<!--				<false/>-->
-<!--			</dict>-->
-<!--		</dict>-->
-<!--	</dict>-->
-    <key>NSAppTransportSecurity</key>
-    <dict>
-        <key>NSAllowsArbitraryLoads</key><true/>
-    </dict>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
 	<key>UILaunchStoryboardName</key>
 	<string>Main</string>
 	<key>UIMainStoryboardFile</key>

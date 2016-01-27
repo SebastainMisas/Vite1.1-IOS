@@ -13,15 +13,20 @@ import FBSDKLoginKit
 
 class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
-    
+    @IBAction func unwindToMainViewController (sender: UIStoryboardSegue){
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
  
     @IBOutlet weak var eventInfoContainer: UIScrollView!
     @IBOutlet weak var userProfilePic: UIImageView!
     @IBOutlet weak var eventPicture: UIImageView!
     @IBOutlet weak var event: UIView!
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
     // making conatiners and images rounded
         userProfilePic.layer.cornerRadius = userProfilePic.frame.size.width/2
         userProfilePic.clipsToBounds = true
@@ -35,58 +40,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         event.addGestureRecognizer(gesture)
         event.userInteractionEnabled = true
         
+        
     }
-// Uploading images to create event code below
-// -------------------------------------------------------------------
-    @IBAction func uploadEventPic(sender: AnyObject) {
-        var Gallery = UIImagePickerController()
-        Gallery.delegate = self
-        Gallery.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
-        Gallery.allowsEditing = true
-// uncomment lines before deployment to use camera
-//        var Camera = UIImagePickerController()
-//        Camera.delegate = self
-//        Camera.sourceType = UIImagePickerControllerSourceType.Camera
-//        Camera.allowsEditing = true
-        
-        // prompting user to pick from camera or galery
-        let alert = UIAlertController(title: "Chose event picture", message: nil, preferredStyle: UIAlertControllerStyle.Alert)
-        alert.addAction(UIAlertAction(title: "Open gallery", style: UIAlertActionStyle.Default, handler: { (actionSheetController) -> Void in
-            self.presentViewController(Gallery, animated: true, completion: nil)
-        }))
-        alert.addAction(UIAlertAction(title: "Open camera", style: UIAlertActionStyle.Default, handler: { (actionSheetController) -> Void in
-//            self.presentViewController(Camera, animated: true, completion: nil)
-        }))
-        alert.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: { (actionSheetController) -> Void in
-            alert.dismissViewControllerAnimated(true, completion: nil)
-        }))
-        self.presentViewController(alert, animated: true, completion: nil)
-        
 
-    }
-    // Global class variable
-    var eventImage: UIImage?
-    // when image is picked set it equal to the gobal variable above
-    func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage!, editingInfo: [NSObject : AnyObject]!) {
-        
-        self.eventImage = image
-
-        picker.dismissViewControllerAnimated(true, completion: { (finished) -> Void in
-            
-            self.performSegueWithIdentifier("createEventPage", sender: self)
-        })
-        
-    }
-    // If the segue is executed set the global variable "eventImage" to the next view controllers "recivedImage"
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        
-        if segue.identifier == "createEventPage" {
-            let destinationViewController = segue.destinationViewController as! CreateEventController
-            destinationViewController.recivedImage = self.eventImage
-        }
-    }
-// ----------------------------------------------------------------------
-// end of image picking code
 
     
 // Animation for swiping left and right on event

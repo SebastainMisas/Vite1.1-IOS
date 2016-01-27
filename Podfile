@@ -5,5 +5,6 @@ use_frameworks!
 
 target 'vite1.1' do
 pod ‘ParseFacebookUtilsV4’
+pod 'FBSDKShareKit'
 end
 

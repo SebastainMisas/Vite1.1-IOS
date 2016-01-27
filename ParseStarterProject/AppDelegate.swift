@@ -12,7 +12,8 @@ import UIKit
 import Parse
 import ParseFacebookUtilsV4
 import FBSDKCoreKit
-
+import Fabric
+import Crashlytics
 
 // If you want to use any of the UI components, uncomment this line
 // import ParseUI
@@ -27,6 +28,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     //--------------------------------------
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        
+        // using frabic for anylitics and crash reports
+        Fabric.with([Crashlytics.self])
         
         //Image Background Navigation Bar
         let navBackgroundImage:UIImage! = UIImage(named: "nav.jpeg")
@@ -98,20 +102,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //            application.registerForRemoteNotificationTypes(types)
         //        }
         
+        FBSDKLoginManager.renewSystemCredentials { (result:ACAccountCredentialRenewResult, error:NSError!) -> Void in
+            
+        }
         return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
 
     }
     
-//    func application(application: UIApplication,
-//        openURL url: NSURL,
-//        sourceApplication: String?,
-//        annotation: AnyObject) -> Bool {
-//            return FBSDKApplicationDelegate.sharedInstance().application(
-//                application,
-//                openURL: url,
-//                sourceApplication: sourceApplication,
-//                annotation: annotation)
-//    }
+    func application(application: UIApplication,
+        openURL url: NSURL,
+        sourceApplication: String?,
+        annotation: AnyObject) -> Bool {
+            
+
+            let isFacebookURL = url.scheme.hasPrefix("fb\(FBSDKSettings.appID())") && url.host == "authorize"
+            if isFacebookURL {
+                return FBSDKApplicationDelegate.sharedInstance().application(application, openURL: url, sourceApplication: sourceApplication, annotation: annotation)
+            }
+            return false
+    }
     
     func application(app: UIApplication, openURL url: NSURL, options: [String : AnyObject]) -> Bool
     {

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="GDx-Tz-Oqb">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="hPI-fL-jJf">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
@@ -56,10 +56,10 @@
             </objects>
             <point key="canvasLocation" x="954" y="690"/>
         </scene>
-        <!--View Controller-->
+        <!--Settings Tab Bar-->
         <scene sceneID="a2s-dy-xqn">
             <objects>
-                <viewController id="SwD-pa-dEa" sceneMemberID="viewController">
+                <viewController id="SwD-pa-dEa" customClass="settingsTabBar" customModule="vite1_1" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="IWq-Zk-PbW"/>
                         <viewControllerLayoutGuide type="bottom" id="1jD-my-k1A"/>
@@ -72,41 +72,56 @@
                                 <rect key="frame" x="0.0" y="28" width="414" height="44"/>
                                 <items>
                                     <navigationItem id="QVC-gr-R9B">
+                                        <nil key="title"/>
                                         <barButtonItem key="leftBarButtonItem" image="Back-50" id="HDI-Qr-EOH">
                                             <inset key="imageInsets" minX="3" minY="8" maxX="8" maxY="7"/>
                                             <color key="tintColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                                            <connections>
+                                                <segue destination="hPI-fL-jJf" kind="show" id="IGM-U3-KQo"/>
+                                            </connections>
                                         </barButtonItem>
+                                        <view key="titleView" contentMode="scaleToFill" id="xxe-Xa-ef7">
+                                            <rect key="frame" x="92" y="1" width="231" height="43"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EoA-AZ-iFx">
+                                                    <rect key="frame" x="107" y="-1" width="130" height="45"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                    <state key="normal" title="Settings">
+                                                        <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </state>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QbG-GH-vKl">
+                                                    <rect key="frame" x="8" y="0.0" width="103" height="43"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <color key="tintColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <state key="normal" title="Profile">
+                                                        <color key="titleColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </state>
+                                                    <connections>
+                                                        <segue destination="21E-YL-R4d" kind="unwind" unwindAction="unwindSegue:" id="g1f-n6-FAX"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D65-qE-sdJ">
-                                <rect key="frame" x="125" y="35" width="46" height="30"/>
-                                <state key="normal" title="Profile">
-                                    <color key="titleColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <segue destination="JrU-V0-WFh" kind="show" id="FLx-2f-8rd"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vqE-gb-YR6">
-                                <rect key="frame" x="204" y="35" width="74" height="30"/>
-                                <state key="normal" title="Settings">
-                                    <color key="titleColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                            </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v50-R2-Xi0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="21E-YL-R4d" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-127" y="1517"/>
+            <point key="canvasLocation" x="-126" y="1560"/>
         </scene>
-        <!--View Controller-->
+        <!--Settings Tab Bar-->
         <scene sceneID="I2s-Gg-41K">
             <objects>
-                <viewController id="JrU-V0-WFh" sceneMemberID="viewController">
+                <viewController id="JrU-V0-WFh" customClass="settingsTabBar" customModule="vite1_1" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="7h8-eD-e5a"/>
                         <viewControllerLayoutGuide type="bottom" id="l5a-Qt-yZv"/>
@@ -119,6 +134,7 @@
                                 <rect key="frame" x="0.0" y="28" width="414" height="44"/>
                                 <items>
                                     <navigationItem id="SYA-CD-DyA">
+                                        <nil key="title"/>
                                         <barButtonItem key="leftBarButtonItem" image="Back-50" id="SKB-vJ-7Uw">
                                             <inset key="imageInsets" minX="3" minY="8" maxX="8" maxY="7"/>
                                             <color key="tintColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
@@ -126,33 +142,66 @@
                                                 <segue destination="hPI-fL-jJf" kind="show" id="SDa-cV-Prw"/>
                                             </connections>
                                         </barButtonItem>
+                                        <view key="titleView" contentMode="scaleToFill" id="hFr-aK-e74">
+                                            <rect key="frame" x="92" y="1" width="231" height="43"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OcV-nI-n1v">
+                                                    <rect key="frame" x="107" y="0.0" width="130" height="44"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <state key="normal" title="Settings">
+                                                        <color key="titleColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </state>
+                                                    <connections>
+                                                        <segue destination="SwD-pa-dEa" kind="show" id="T0T-71-a9c"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5CL-xH-2LM">
+                                                    <rect key="frame" x="8" y="0.0" width="103" height="43"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
+                                                    <state key="normal" title="Profile">
+                                                        <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </state>
+                                                </button>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yA0-Nm-jxf">
-                                <rect key="frame" x="133" y="35" width="46" height="30"/>
-                                <color key="tintColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Profile">
-                                    <color key="titleColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sebastian" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xNu-nS-3FV">
+                                <rect key="frame" x="79" y="380" width="265" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Bio" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="mnm-eH-IIa">
+                                <rect key="frame" x="20" y="414" width="369" height="93"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LoJ-SO-m6X">
+                                <rect key="frame" x="161" y="79" width="87" height="30"/>
+                                <state key="normal" title="Edit profile"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AzX-OR-uSU">
-                                <rect key="frame" x="214" y="35" width="79" height="30"/>
-                                <state key="normal" title="Settings">
-                                    <color key="titleColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <segue destination="SwD-pa-dEa" kind="show" id="K0u-Sa-D1W"/>
-                                </connections>
-                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="12294663_10203804687677120_2383926010236257492_n" translatesAutoresizingMaskIntoConstraints="NO" id="8td-pT-6gc">
+                                <rect key="frame" x="0.0" y="108" width="414" height="254"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Instagram Photos" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="30f-NS-x9Y">
+                                <rect key="frame" x="138" y="510" width="146" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hlw-G8-lr5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="406" y="1549"/>
+            <point key="canvasLocation" x="392" y="1560"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="wUh-ZU-vH4">
@@ -187,6 +236,7 @@
                                                         <color key="tintColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                                                         <connections>
                                                             <action selector="uploadEventPic:" destination="hPI-fL-jJf" id="hlL-X5-J6U"/>
+                                                            <segue destination="x7Q-b5-6uW" kind="presentation" modalPresentationStyle="overFullScreen" modalTransitionStyle="coverVertical" id="IXQ-Pd-WQs"/>
                                                         </connections>
                                                     </barButtonItem>
                                                 </leftBarButtonItems>
@@ -260,13 +310,75 @@
                         <outlet property="eventInfoContainer" destination="KSN-36-nFq" id="Iwb-09-yZD"/>
                         <outlet property="eventPicture" destination="gBd-1K-a5S" id="Vd8-Vf-ADB"/>
                         <outlet property="userProfilePic" destination="gBd-1K-a5S" id="HL3-iZ-uh4"/>
-                        <segue destination="fsj-MY-QzA" kind="show" identifier="createEventPage" id="XWA-Zr-nyg"/>
-                        <segue destination="fsj-MY-QzA" kind="show" id="gO5-w7-l7Z"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CHP-o9-rYg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="954" y="1517"/>
+        </scene>
+        <!--Chose Event Picture Transition View Controller-->
+        <scene sceneID="oZN-il-I1q">
+            <objects>
+                <viewController id="x7Q-b5-6uW" customClass="choseEventPictureTransitionViewController" customModule="vite1_1" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="6oy-Qt-37k"/>
+                        <viewControllerLayoutGuide type="bottom" id="d1l-dA-qAV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="PR0-f3-49m">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Camera" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xEo-lz-jLh">
+                                <rect key="frame" x="79" y="551" width="256" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Gallery" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hW4-gL-sFd">
+                                <rect key="frame" x="79" y="276" width="256" height="33"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KXW-Ux-6zX">
+                                <rect key="frame" x="111" y="65" width="217" height="203"/>
+                                <state key="normal" image="galleryicon"/>
+                                <connections>
+                                    <action selector="useGallery:" destination="x7Q-b5-6uW" eventType="touchUpInside" id="JgM-hE-m4G"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eza-JC-ZzJ">
+                                <rect key="frame" x="111" y="327" width="192" height="186"/>
+                                <state key="normal" image="Pictures-icon"/>
+                                <connections>
+                                    <action selector="useCamera:" destination="x7Q-b5-6uW" eventType="touchUpInside" id="bSN-6u-5cD"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ndc-bx-Zqs">
+                                <rect key="frame" x="170" y="660" width="74" height="30"/>
+                                <state key="normal" title="Cancel">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="cii-Ja-Na9" kind="unwind" unwindAction="unwindToMainViewController:" id="Mox-ea-bGy"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.70239762931034477" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                    <connections>
+                        <outlet property="cameraIcon" destination="eza-JC-ZzJ" id="QRM-xm-vW8"/>
+                        <outlet property="cameraLabel" destination="xEo-lz-jLh" id="XbB-zN-WM9"/>
+                        <outlet property="galleryIcon" destination="KXW-Ux-6zX" id="OSv-nS-81v"/>
+                        <outlet property="galleryLabel" destination="hW4-gL-sFd" id="gh1-ST-F0A"/>
+                        <segue destination="fsj-MY-QzA" kind="show" identifier="createEventPage" id="FLk-ka-gxo"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tmV-Yo-ANL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="cii-Ja-Na9" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="1459" y="1505"/>
         </scene>
         <!--Create Event Controller-->
         <scene sceneID="w5E-oi-QoW">
@@ -362,7 +474,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nO9-4g-so0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="954" y="2395"/>
+            <point key="canvasLocation" x="1446" y="2415"/>
         </scene>
     </scenes>
     <resources>
@@ -373,15 +485,15 @@
         <image name="Create New Filled-50" width="50" height="50"/>
         <image name="Facebook Filled-50" width="50" height="50"/>
         <image name="Instagram Filled-50" width="50" height="50"/>
+        <image name="Pictures-icon" width="256" height="256"/>
         <image name="Read Message Filled-50" width="50" height="50"/>
         <image name="Screen Shot 2016-01-11 at 3.24.20 PM" width="505" height="505"/>
         <image name="Settings Filled-50" width="50" height="50"/>
         <image name="Twitter Filled-50" width="50" height="50"/>
+        <image name="galleryicon" width="256" height="256"/>
         <image name="sparkled-mci-party-bus-interior-limo-bus-dfw" width="1024" height="680"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="5Dr-we-4pX"/>
-        <segue reference="gO5-w7-l7Z"/>
-        <segue reference="gK4-ZY-aLG"/>
+        <segue reference="SDa-cV-Prw"/>
     </inferredMetricsTieBreakers>
 </document>
